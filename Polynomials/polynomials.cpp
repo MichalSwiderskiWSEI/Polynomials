@@ -113,7 +113,7 @@ Equation* Equation::multiply(const Equation& another)
     {
         for (auto factor2 : another.factors) 
         {
-            all->push_front(*new EquationNode(factor.getBase() * factor2.getBase(), factor.getPower() * factor2.getPower()));
+            all->push_front(*new EquationNode(factor.getBase() * factor2.getBase(), factor.getPower() + factor2.getPower()));
         }
     }
     all->sort(EquationNode::sortByPowerAsc);
@@ -489,23 +489,21 @@ void App::printMenuInLoop()
     {
         std::string line;
         getline(std::cin, line);
-        std::cout << "--------------------" << std::endl;
-
-        if (!doCommand(line))
+        if (line.length() == 3)
         {
+            std::cout << "--------------------" << std::endl;
             std::cout << "       B³¹d wykonania komendy" << std::endl;
             std::cout << "--------------------" << std::endl;
+            App::printMenuInLoop();
+        }
+        else 
+        {
+            std::cout << "--------------------" << std::endl;
+            if (!doCommand(line)) 
+            {
+                std::cout << "       B³¹d wykonania komendy" << std::endl;
+                std::cout << "--------------------" << std::endl;
+            }
         }
     }
 }
-
-//int main()
-//{
-//    setlocale(LC_ALL, "");
-//    std::cout << "       Operacje na wielomianach 1 zmiennej" << std::endl;
-//    std::cout << std::endl;
-//    std::cout << "--------------------" << std::endl;
-//    auto app = new App();
-//    app->App::start();
-//    return 0;
-//}

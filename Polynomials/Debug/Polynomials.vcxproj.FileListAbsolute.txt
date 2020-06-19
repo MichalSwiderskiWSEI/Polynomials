@@ -1,2 +1,2 @@
-C:\Users\Dyrygent\source\repos\Polynomials\Debug\PolymonialsLib.pdb
-C:\Users\Dyrygent\source\repos\Polynomials\Polynomials\Debug\PolymonialsLib.pdb
+C:\Users\Dyrygent\source\repos\Polynomials\Debug\PolynomialsLib.pdb
+C:\Users\Dyrygent\source\repos\Polynomials\Polynomials\Debug\PolynomialsLib.pdb
