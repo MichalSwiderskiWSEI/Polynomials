@@ -24,7 +24,7 @@
     <ProjectGuid>{3be2f04b-d752-4f26-b933-fcef9f146318}</ProjectGuid>
     <RootNamespace>Polynomials</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>PolymonialsLib</ProjectName>
+    <ProjectName>PolynomialsLib</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="polymonials.cpp" />
+    <ClCompile Include="polynomials.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />

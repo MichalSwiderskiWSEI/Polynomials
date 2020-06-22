@@ -4,6 +4,7 @@ class App
 {
     public:
         void start();
+        
     private:
         EquationDatabase* db;
         static void printOptions();
