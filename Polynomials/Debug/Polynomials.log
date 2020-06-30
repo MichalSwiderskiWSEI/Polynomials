@@ -1,3 +1,3 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(467,5): warning MSB8028: Katalog pośredni (Debug\) zawiera pliki udostępnione z innego projektu (Polymonials.vcxproj, PolymonialsLib.vcxproj, Polynomials.vcxproj). Może to spowodować niepoprawne zachowanie podczas oczyszczania i ponownej kompilacji.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Polymonials.vcxproj, PolymonialsLib.vcxproj, Polynomials.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   polynomials.cpp
-  Polynomials.vcxproj -> C:\Users\mwoszczyk\Source\Repos\PolynomialsCheck\Debug\PolynomialsLib.lib
+  Polynomials.vcxproj -> C:\Users\Leila\Source\Repos\Polynomials2\Debug\PolynomialsLib.lib
