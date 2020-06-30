@@ -263,7 +263,6 @@ Equation* CommandLineInput::sumEquations(Equation& first, Equation& second)
 
 Equation* CommandLineInput::substractEquations(Equation& first, Equation& second) 
 {
-    // return first.substract(second);
     return second.substract(first);
 }
 
@@ -325,12 +324,60 @@ double EquationDatabase::getValue(char name, double a)
     return 0.0;
 }
 
+Equation* EquationDatabase::sortAddEquation(const Equation& equation) 
+{
+    auto* newFactors = new std::list<EquationNode>;
+    auto* all = new std::list<EquationNode>;
+    for (auto factor : equation.factors)
+    {
+        all->push_front(*new EquationNode(factor.getBase(), factor.getPower()));
+    }
+    all->sort(EquationNode::sortByPowerAsc);
+    std::list<EquationNode>::const_iterator it = all->begin();
+    if (!all->empty())
+    {
+        int base = it->getBase();
+        int power = it->getPower();
+        it++;
+        while (it != all->end()) // do metody ustawiajacej wielomiany
+        {
+            if (it->getPower() != power)
+            {
+                newFactors->push_front(*new EquationNode(base, power));
+                base = it->getBase();
+                power = it->getPower();
+            }
+            else
+            {
+                base += it->getBase();
+            }
+            ++it;
+        }
+        newFactors->push_front(*new EquationNode(base, power));
+    } 
+    else if (all->empty()) {
+        newFactors->clear();
+    }
+    newFactors->sort(EquationNode::sortByPowerAsc);
+    auto newEquation = new Equation(*newFactors);
+    return new Equation(*newFactors);
+}
+
 void EquationDatabase::printEquationIfExists(char& name) 
 {
     auto it = db.find(name);
     if (it != db.end()) 
     {
-        std::cout << it->first << "=" << it->second; // first i second
+        Equation sortedEquation = *EquationDatabase::sortAddEquation(it->second);
+        if (sortedEquation.factors.empty()) 
+        {
+            std::cout << it->first << "=0" << std::endl;
+            std::cout << "--------------------" << std::endl;
+        }
+        else 
+        {
+            std::cout << it->first << "=" << sortedEquation; // first i second
+        }
     }
     else 
     {

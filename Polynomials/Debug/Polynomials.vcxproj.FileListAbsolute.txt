@@ -1,2 +1,4 @@
 C:\Users\Dyrygent\source\repos\Polynomials\Debug\PolynomialsLib.pdb
 C:\Users\Dyrygent\source\repos\Polynomials\Polynomials\Debug\PolynomialsLib.pdb
+C:\Users\mwoszczyk\Source\Repos\PolynomialsCheck\Debug\PolynomialsLib.pdb
+C:\Users\mwoszczyk\Source\Repos\PolynomialsCheck\Polynomials\Debug\PolynomialsLib.pdb

@@ -12,4 +12,5 @@ class EquationDatabase
         void printEquationIfExists(char& name);
         bool isEquationExists(char& name);
         Equation* getEquationByName(char& name);
+        Equation* sortAddEquation(const Equation& another);
 };
